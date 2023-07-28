@@ -23,8 +23,7 @@ class DiscoverViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
-        setUI()
+                setUI()
         tableCoordinator.createSectionList()
         tableCoordinator.registerCell(tableView: tableView)
     }
