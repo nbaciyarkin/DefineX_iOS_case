@@ -32,6 +32,8 @@
 		4E0AEFDE2A73595A00D8760F /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E0AEFCB2A73595A00D8760F /* Roboto-Black.ttf */; };
 		4E0AEFE12A735B8700D8760F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AEFE02A735B8700D8760F /* Helper.swift */; };
 		4E0AEFE32A73BF6900D8760F /* SecondHorizontalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AEFE22A73BF6900D8760F /* SecondHorizontalTableCell.swift */; };
+		4E2FA53B2A769FC70005CCAD /* VerticalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA53A2A769FC70005CCAD /* VerticalCollectionCell.swift */; };
+		4E2FA53D2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA53C2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift */; };
 		4E3D874C2A7103DD00BD7AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D874B2A7103DD00BD7AF7 /* AppDelegate.swift */; };
 		4E3D874E2A7103DD00BD7AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D874D2A7103DD00BD7AF7 /* SceneDelegate.swift */; };
 		4E3D87502A7103DD00BD7AF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D874F2A7103DD00BD7AF7 /* LoginViewController.swift */; };
@@ -95,6 +97,8 @@
 		4E0AEFCB2A73595A00D8760F /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		4E0AEFE02A735B8700D8760F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4E0AEFE22A73BF6900D8760F /* SecondHorizontalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHorizontalTableCell.swift; sourceTree = "<group>"; };
+		4E2FA53A2A769FC70005CCAD /* VerticalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionCell.swift; sourceTree = "<group>"; };
+		4E2FA53C2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionTabelCell.swift; sourceTree = "<group>"; };
 		4E3D87482A7103DD00BD7AF7 /* DefineX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefineX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3D874B2A7103DD00BD7AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3D874D2A7103DD00BD7AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4E0AEFB12A7329B500D8760F /* HorizontalCollectionCell.swift */,
+				4E2FA53A2A769FC70005CCAD /* VerticalCollectionCell.swift */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				4E0AEFB32A7329EF00D8760F /* GetStartedTableCell.swift */,
 				4E0AEFE22A73BF6900D8760F /* SecondHorizontalTableCell.swift */,
+				4E2FA53C2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2FA53B2A769FC70005CCAD /* VerticalCollectionCell.swift in Sources */,
 				4EBC08082A72E31200C5AE28 /* DiscoverViewController.swift in Sources */,
 				4E0AEFAE2A7315C700D8760F /* CellCordinator.swift in Sources */,
 				4E6C022D2A711FE300AD8CB1 /* Bindable.swift in Sources */,
@@ -551,6 +558,7 @@
 				4E3D874C2A7103DD00BD7AF7 /* AppDelegate.swift in Sources */,
 				4E0AEFB62A73519B00D8760F /* MockViewController.swift in Sources */,
 				4EBC080D2A72E51000C5AE28 /* DiscoverViewModel.swift in Sources */,
+				4E2FA53D2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift in Sources */,
 				4EBC08062A727A1A00C5AE28 /* LoginRouter.swift in Sources */,
 				4E0AEFE12A735B8700D8760F /* Helper.swift in Sources */,
 				4E3D874E2A7103DD00BD7AF7 /* SceneDelegate.swift in Sources */,

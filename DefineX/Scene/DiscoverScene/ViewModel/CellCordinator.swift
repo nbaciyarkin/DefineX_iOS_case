@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 enum HomeSectionCellType {
-    case FirstHorizontal, SecondHorizontal,Plants
+    case FirstHorizontal, SecondHorizontal, VerticlalCollection
 }
 
 enum HomneSectionItemType {
-    case FirstHorizontal, SecondHorizontal,  Plants
+    case FirstHorizontal, SecondHorizontal,   VerticlalCollection
 }
 
 class HomeCellItem {
@@ -35,7 +35,7 @@ class CellCordinator {
     enum CellType: String {
         case UpgradeAccount = "UpgradeAccount"
         case GetStarted = "GetStarted"
-        case Feature = "Plants"
+        case  VerticlalCollection = " VerticlalCollection"
     }
 
 //    private(set) var questionList = [Question]()
@@ -47,21 +47,22 @@ class CellCordinator {
 
 
     func registerCell(tableView: UITableView){
-        //tableView.register(UpgradeAccountTableViewCell.self, forCellReuseIdentifier: UpgradeAccountTableViewCell.identifier)
+        
         tableView.register(GetStartedTableCell.self, forCellReuseIdentifier: GetStartedTableCell.identifier)
         tableView.register(SecondHorizontalTableCell.self, forCellReuseIdentifier: SecondHorizontalTableCell.identifier)
+        tableView.register(VerticalCollectionTabelCell.self, forCellReuseIdentifier: VerticalCollectionTabelCell.identifier)
     }
     
 
-//    func createUpgradeAccountCell(tableView: UITableView, indexPath: IndexPath) -> UpgradeAccountTableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: UpgradeAccountTableViewCell.identifier, for: indexPath) as! UpgradeAccountTableViewCell
+    func createVerticalCollectionCell(tableView: UITableView, indexPath: IndexPath) -> VerticalCollectionTabelCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: VerticalCollectionTabelCell.identifier, for: indexPath) as! VerticalCollectionTabelCell
 //        let sectionItem = sectionList[indexPath.section]
-//        if sectionItem.sectionType == .UpgradeAccount {
+//        if sectionItem.sectionType == .VerticlalCollection {
 //            cell.setTContent(headerText: "FREE Premium Available", infoText: "Tap to upgrade your account!", leftIcon: Constants.badged_mail_icon!, goIcon: Constants.right_arrow!)
 //        cell.backgroundColor = .clear
 //        }
-//        return cell
-//    }
+        return cell
+    }
 
     func createFirstHorizontalCell(tableView: UITableView, indexPath: IndexPath) -> GetStartedTableCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GetStartedTableCell.identifier, for: indexPath) as! GetStartedTableCell
@@ -92,10 +93,10 @@ class CellCordinator {
         featuresSection.cellList = createSecondHorizontalSectionCellList()
         sectionList.append(featuresSection)
 
-//        let getPlants = HomeSectionItem()
-//        getPlants.sectionType = .Plants
-//        getPlants.cellList = createPlantsSectionCellList()
-//        sectionList.append(getPlants)
+        let verticalCollectionSection = HomeSectionItem()
+        verticalCollectionSection.sectionType = .VerticlalCollection
+        verticalCollectionSection.cellList = createVerticalCollectionCellList()
+        sectionList.append(verticalCollectionSection)
         delegate?.reloadData()
     }
 
@@ -117,14 +118,14 @@ class CellCordinator {
         return list
     }
 
-//    func createPlantsSectionCellList() -> [HomeCellItem]{
-//        var list = [HomeCellItem]()
-//        let getPlantCards = HomeCellItem()
-//        getPlantCards.cellType = .Plants
-//        getPlantCards.cellIdentifier = PlantTypeCollectionTableCell.identifier
-//        list.append(getPlantCards)
-//        return list
-//    }
+    func createVerticalCollectionCellList() -> [HomeCellItem]{
+        var list = [HomeCellItem]()
+        let verticalCollectionCellCards = HomeCellItem()
+        verticalCollectionCellCards.cellType = .VerticlalCollection
+        verticalCollectionCellCards.cellIdentifier = VerticalCollectionTabelCell.identifier
+        list.append(verticalCollectionCellCards)
+        return list
+    }
 }
 
 //MARK: - Table View
@@ -154,11 +155,12 @@ extension CellCordinator {
            return 200
         }
         
-//        else if sectionItem.sectionType == .Plants {
-//            if sectionItem.cellList[indexPath.row].cellType == .Plants {
-//                return  100 * CGFloat(plantList.count)
-//            }
-//        }
+        else if sectionItem.sectionType == .VerticlalCollection {
+            if sectionItem.cellList[indexPath.row].cellType == .VerticlalCollection {
+                //return  100 * CGFloat(plantList.count)
+                return 400
+            }
+        }
         return 100
     }
 

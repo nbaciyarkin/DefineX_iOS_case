@@ -12,7 +12,6 @@ import SnapKit
 class HorizontalCollectionCell: UICollectionViewCell {
     static let identifier = "HorizontalCollectionCell"
     
-
     private var containerView: UIView = {
         let view = UIView()
         return view

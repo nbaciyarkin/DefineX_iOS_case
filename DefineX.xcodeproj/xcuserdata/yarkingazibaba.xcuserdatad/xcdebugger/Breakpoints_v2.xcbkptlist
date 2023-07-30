@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "79569BFE-E594-4B0E-BAB9-A75EECE24C25"
+            uuid = "E2FF7617-0DF5-4BC4-AF40-5814E966FA22"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DefineX/Scene/DiscoverScene/View/TableCell/SecondHorizontalTableCell.swift"
+            filePath = "DefineX/Scene/DiscoverScene/View/TableCell/VerticalCollectionTabelCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E2FF7617-0DF5-4BC4-AF40-5814E966FA22 - b9e57d63b9df9c32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DefineX.VerticalCollectionTabelCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "DefineX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarkingazibaba/Desktop/DefineX/DefineX/Scene/DiscoverScene/View/TableCell/VerticalCollectionTabelCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  uuid = "E2FF7617-0DF5-4BC4-AF40-5814E966FA22 - b9e57d63b9df9c15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DefineX.VerticalCollectionTabelCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "DefineX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yarkingazibaba/Desktop/DefineX/DefineX/Scene/DiscoverScene/View/TableCell/VerticalCollectionTabelCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
