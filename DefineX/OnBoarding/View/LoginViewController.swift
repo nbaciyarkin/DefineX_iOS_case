@@ -121,6 +121,9 @@ class LoginViewController: UIViewController{
         view.backgroundColor = .white
         setUpViewModel()
         setUI()
+//        ServiceManager.shared.
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -221,6 +224,7 @@ class LoginViewController: UIViewController{
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 0 {
+            print(textField.text)
             print("üstteki dokunuş geldi")
             emailTextField.tintColor = UIColor(named: "login_selectedColor")
         }
@@ -288,12 +292,40 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
    
     @objc private func logIn_TUI(){
-        LoginRouter.startModule(navigationController: self.navigationController ?? UINavigationController(), viewController: TabBarController())
+         
+        if let password = passwordTextField.text, password == "123456", let email = emailTextField.text, email == "test@test.com" {
+            if isValidEmail(email) {
+                viewModel.login(email: email, password: password) { completion in
+                    if completion {
+                        LoginRouter.startModule(navigationController: self.navigationController ?? UINavigationController(), viewController: TabBarController())
+                    }
+                }
+//                viewModel.login(email: email, password: password, completion: <#(Bool) -> Void#>)
+//                if UserDefaults.standard.getToken() != "" {
+//
+//                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
     }
     
     @objc private func comingSoon_TUI(){
         // alert bas
         print("alert bas")
+    }
+}
+extension LoginViewController {
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
 }
 

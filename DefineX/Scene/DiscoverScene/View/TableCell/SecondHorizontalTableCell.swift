@@ -24,16 +24,15 @@ import SnapKit
 class SecondHorizontalTableCell: UITableViewCell {
     
     static let identifier = "SecondHorizontalTableCell"
-    
     //weak var delegate: GetStartedTableCellDelegate?
     
-//    var questionList = [Question]() {
-//        didSet{
-//            DispatchQueue.main.async {
-//                self.getStartedCollectionView.reloadData()
-//            }
-//        }
-//    }
+    var products = [Product]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.horizontalCollectionView.reloadData()
+            }
+        }
+    }
     
     private let horizontalCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -72,13 +71,13 @@ class SecondHorizontalTableCell: UITableViewCell {
             make.height.equalToSuperview()
         }
     }
-//
-//    func sentData(list:[Question]){
-//        self.questionList = list
-//        DispatchQueue.main.async {
-//            self.getStartedCollectionView.reloadData()
-//        }
-//    }
+
+    func sendData(list:[Product]){
+        self.products = list
+        DispatchQueue.main.async {
+            self.horizontalCollectionView.reloadData()
+        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -87,23 +86,17 @@ class SecondHorizontalTableCell: UITableViewCell {
 
 extension SecondHorizontalTableCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return questionList.count
-        return 5
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCollectionCell.identifier, for: indexPath) as? HorizontalCollectionCell else {
             return UICollectionViewCell()
-           
         }
-//        let question = questionList[indexPath.row]
-//        if let url = URL(string: question.image_uri ??  "https://firebasestorage.googleapis.com/v0/b/flora---plant-identifier.appspot.com/o/public%2Fcard2.png?alt=media"){
-//            let title = question.title
-//            cell.setData(title: title ?? "How to plant identify?", questionImageURL: url)
-//            print(question)
-//           return cell
-//        }
-        cell.imageView.image = UIImage(named: "second_horizontal_image")
+        
+        let product = products[indexPath.row]
+        cell.setSecondHorizontalData(title: product.description, currentPrice: product.price, oldPrice: product.oldPrice, image: product.imageUrl)
+        cell.setSecondHorizontalUI()
         cell.convertsecondHorizontalCell()
         return cell
     }

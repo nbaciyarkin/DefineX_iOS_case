@@ -34,6 +34,12 @@
 		4E0AEFE32A73BF6900D8760F /* SecondHorizontalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AEFE22A73BF6900D8760F /* SecondHorizontalTableCell.swift */; };
 		4E2FA53B2A769FC70005CCAD /* VerticalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA53A2A769FC70005CCAD /* VerticalCollectionCell.swift */; };
 		4E2FA53D2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA53C2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift */; };
+		4E2FA5402A76BE430005CCAD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA53F2A76BE430005CCAD /* UserDefaults.swift */; };
+		4E2FA5432A76D6D50005CCAD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4E2FA5422A76D6D50005CCAD /* Alamofire */; };
+		4E2FA5462A76D7060005CCAD /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA5452A76D7060005CCAD /* ServiceManager.swift */; };
+		4E2FA5482A76D72A0005CCAD /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA5472A76D72A0005CCAD /* ApiCaller.swift */; };
+		4E2FA54A2A76D74C0005CCAD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA5492A76D74C0005CCAD /* Service.swift */; };
+		4E2FA54C2A76D9910005CCAD /* ProdcutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FA54B2A76D9910005CCAD /* ProdcutModel.swift */; };
 		4E3D874C2A7103DD00BD7AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D874B2A7103DD00BD7AF7 /* AppDelegate.swift */; };
 		4E3D874E2A7103DD00BD7AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D874D2A7103DD00BD7AF7 /* SceneDelegate.swift */; };
 		4E3D87502A7103DD00BD7AF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D874F2A7103DD00BD7AF7 /* LoginViewController.swift */; };
@@ -52,6 +58,8 @@
 		4EBC08062A727A1A00C5AE28 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC08052A727A1A00C5AE28 /* LoginRouter.swift */; };
 		4EBC08082A72E31200C5AE28 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC08072A72E31200C5AE28 /* DiscoverViewController.swift */; };
 		4EBC080D2A72E51000C5AE28 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC080C2A72E51000C5AE28 /* DiscoverViewModel.swift */; };
+		4EE62B222A76E500000DF763 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE62B212A76E500000DF763 /* LoginResponse.swift */; };
+		4EFB77962A772F09003EB35B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4EFB77952A772F09003EB35B /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,11 @@
 		4E0AEFE22A73BF6900D8760F /* SecondHorizontalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHorizontalTableCell.swift; sourceTree = "<group>"; };
 		4E2FA53A2A769FC70005CCAD /* VerticalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionCell.swift; sourceTree = "<group>"; };
 		4E2FA53C2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionTabelCell.swift; sourceTree = "<group>"; };
+		4E2FA53F2A76BE430005CCAD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		4E2FA5452A76D7060005CCAD /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		4E2FA5472A76D72A0005CCAD /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		4E2FA5492A76D74C0005CCAD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		4E2FA54B2A76D9910005CCAD /* ProdcutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdcutModel.swift; sourceTree = "<group>"; };
 		4E3D87482A7103DD00BD7AF7 /* DefineX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefineX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3D874B2A7103DD00BD7AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3D874D2A7103DD00BD7AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +132,7 @@
 		4EBC08052A727A1A00C5AE28 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		4EBC08072A72E31200C5AE28 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		4EBC080C2A72E51000C5AE28 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		4EE62B212A76E500000DF763 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2FA5432A76D6D50005CCAD /* Alamofire in Frameworks */,
 				4E6C02252A71137E00AD8CB1 /* SnapKit in Frameworks */,
+				4EFB77962A772F09003EB35B /* SDWebImage in Frameworks */,
 				4E6C02282A71150600AD8CB1 /* SkyFloatingLabelTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +226,24 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		4E2FA53E2A76BE320005CCAD /* UserDefaultsUtility */ = {
+			isa = PBXGroup;
+			children = (
+				4E2FA53F2A76BE430005CCAD /* UserDefaults.swift */,
+			);
+			path = UserDefaultsUtility;
+			sourceTree = "<group>";
+		};
+		4E2FA5442A76D6E90005CCAD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4E2FA5452A76D7060005CCAD /* ServiceManager.swift */,
+				4E2FA5472A76D72A0005CCAD /* ApiCaller.swift */,
+				4E2FA5492A76D74C0005CCAD /* Service.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		4E3D873F2A7103DD00BD7AF7 = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +301,8 @@
 		4E3D877B2A71041900BD7AF7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E2FA54B2A76D9910005CCAD /* ProdcutModel.swift */,
+				4EE62B212A76E500000DF763 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,6 +352,7 @@
 		4E6C02292A711F8F00AD8CB1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				4E2FA5442A76D6E90005CCAD /* Network */,
 				4EBC08022A72766900C5AE28 /* TabBarController */,
 				4E6C022B2A711FD600AD8CB1 /* Shared */,
 			);
@@ -333,6 +370,7 @@
 		4E6C022B2A711FD600AD8CB1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4E2FA53E2A76BE320005CCAD /* UserDefaultsUtility */,
 				4E0AEFDF2A735B7D00D8760F /* Helper */,
 				4E0AEFB72A73594200D8760F /* Resources */,
 				4E6C022E2A7122BB00AD8CB1 /* Extensions */,
@@ -405,6 +443,8 @@
 			packageProductDependencies = (
 				4E6C02242A71137E00AD8CB1 /* SnapKit */,
 				4E6C02272A71150600AD8CB1 /* SkyFloatingLabelTextField */,
+				4E2FA5422A76D6D50005CCAD /* Alamofire */,
+				4EFB77952A772F09003EB35B /* SDWebImage */,
 			);
 			productName = DefineX;
 			productReference = 4E3D87482A7103DD00BD7AF7 /* DefineX.app */;
@@ -481,6 +521,8 @@
 			packageReferences = (
 				4E6C02232A71137E00AD8CB1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4E6C02262A71150600AD8CB1 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+				4E2FA5412A76D6D50005CCAD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4EFB77942A772F09003EB35B /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 4E3D87492A7103DD00BD7AF7 /* Products */;
 			projectDirPath = "";
@@ -549,6 +591,7 @@
 				4E0AEFAE2A7315C700D8760F /* CellCordinator.swift in Sources */,
 				4E6C022D2A711FE300AD8CB1 /* Bindable.swift in Sources */,
 				4E6C02302A7122C500AD8CB1 /* Extensions.swift in Sources */,
+				4E2FA54C2A76D9910005CCAD /* ProdcutModel.swift in Sources */,
 				4E0AEFB42A7329EF00D8760F /* GetStartedTableCell.swift in Sources */,
 				4E0AEFB22A7329B500D8760F /* HorizontalCollectionCell.swift in Sources */,
 				4E3D87822A7104D500BD7AF7 /* LoginViewModel.swift in Sources */,
@@ -557,11 +600,16 @@
 				4EBC08042A72767A00C5AE28 /* TabBarController.swift in Sources */,
 				4E3D874C2A7103DD00BD7AF7 /* AppDelegate.swift in Sources */,
 				4E0AEFB62A73519B00D8760F /* MockViewController.swift in Sources */,
+				4EE62B222A76E500000DF763 /* LoginResponse.swift in Sources */,
+				4E2FA5402A76BE430005CCAD /* UserDefaults.swift in Sources */,
 				4EBC080D2A72E51000C5AE28 /* DiscoverViewModel.swift in Sources */,
 				4E2FA53D2A76A50D0005CCAD /* VerticalCollectionTabelCell.swift in Sources */,
+				4E2FA5482A76D72A0005CCAD /* ApiCaller.swift in Sources */,
 				4EBC08062A727A1A00C5AE28 /* LoginRouter.swift in Sources */,
 				4E0AEFE12A735B8700D8760F /* Helper.swift in Sources */,
+				4E2FA54A2A76D74C0005CCAD /* Service.swift in Sources */,
 				4E3D874E2A7103DD00BD7AF7 /* SceneDelegate.swift in Sources */,
+				4E2FA5462A76D7060005CCAD /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +949,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4E2FA5412A76D6D50005CCAD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4E6C02232A71137E00AD8CB1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -917,9 +973,22 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		4EFB77942A772F09003EB35B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4E2FA5422A76D6D50005CCAD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E2FA5412A76D6D50005CCAD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		4E6C02242A71137E00AD8CB1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4E6C02232A71137E00AD8CB1 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -929,6 +998,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4E6C02262A71150600AD8CB1 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
 			productName = SkyFloatingLabelTextField;
+		};
+		4EFB77952A772F09003EB35B /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EFB77942A772F09003EB35B /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

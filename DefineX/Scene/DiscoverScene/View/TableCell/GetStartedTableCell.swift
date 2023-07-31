@@ -18,23 +18,18 @@ import UIKit
 import SnapKit
 //import SDWebImage
 
-protocol GetStartedTableCellDelegate: AnyObject {
-    func didTappedGetStartedCell(_ cell: GetStartedTableCell ,indexPath:IndexPath)
-}
-
-class GetStartedTableCell: UITableViewCell {
+class FirstHorizontalTabelCell: UITableViewCell {
     
-    static let identifier = "GetStartedTableCell"
+    static let identifier = "FirstHorizontalTabelCell"
     
-    weak var delegate: GetStartedTableCellDelegate?
     
-//    var questionList = [Question]() {
-//        didSet{
-//            DispatchQueue.main.async {
-//                self.getStartedCollectionView.reloadData()
-//            }
-//        }
-//    }
+    var products = [Product]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.horizontalCollectionView.reloadData()
+            }
+        }
+    }
     
     private let horizontalCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -74,22 +69,22 @@ class GetStartedTableCell: UITableViewCell {
         }
     }
 //
-//    func sentData(list:[Question]){
-//        self.questionList = list
-//        DispatchQueue.main.async {
-//            self.getStartedCollectionView.reloadData()
-//        }
-//    }
+    func sentData(list:[Product]){
+        self.products = list
+        DispatchQueue.main.async {
+            self.horizontalCollectionView.reloadData()
+        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension GetStartedTableCell: UICollectionViewDataSource, UICollectionViewDelegate {
+extension FirstHorizontalTabelCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return questionList.count
-        return 5
+        return products.count
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -97,20 +92,11 @@ extension GetStartedTableCell: UICollectionViewDataSource, UICollectionViewDeleg
             return UICollectionViewCell()
            
         }
-//        let question = questionList[indexPath.row]
-//        if let url = URL(string: question.image_uri ??  "https://firebasestorage.googleapis.com/v0/b/flora---plant-identifier.appspot.com/o/public%2Fcard2.png?alt=media"){
-//            let title = question.title
-//            cell.setData(title: title ?? "How to plant identify?", questionImageURL: url)
-//            print(question)
-//           return cell
-//        }
-        //cell.backgroundColor = .red
-        
+        let product = products[indexPath.row]
+        cell.setFirstHorizontalData(title: product.description , currentPrice: product.price, discount: product.discount, oldPrice:     product.oldPrice, image: product.imageUrl)
+        cell.setFirstHorizontalUI()
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didTappedGetStartedCell(self, indexPath: indexPath)
-    }
 }
 

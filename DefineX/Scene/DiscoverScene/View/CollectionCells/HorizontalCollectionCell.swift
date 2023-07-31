@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import SDWebImage
 
 class HorizontalCollectionCell: UICollectionViewCell {
     static let identifier = "HorizontalCollectionCell"
@@ -38,7 +39,7 @@ class HorizontalCollectionCell: UICollectionViewCell {
         return lbl
     }()
     
-    private var currentPriceLabel: UILabel = {
+     var currentPriceLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "19,99 $US"
         lbl.textAlignment = .left
@@ -111,8 +112,6 @@ class HorizontalCollectionCell: UICollectionViewCell {
 //        blurView.frame = contentView.bounds
         //containerView.addSubview(blurView)
         containerView.backgroundColor = .clear
-        setUI()
-
     }
     
     required init?(coder: NSCoder) {
@@ -120,11 +119,13 @@ class HorizontalCollectionCell: UICollectionViewCell {
     }
     
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        imageView.image = nil
-//        infoLabel.text = ""
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        infoLabel.text = ""
+        currentPriceLabel.text = ""
+        oldValueLabel.text = ""
+    }
 
     func setStackView() {
         bottomStackView.addArrangedSubview(oldValueLabel)
@@ -137,10 +138,26 @@ class HorizontalCollectionCell: UICollectionViewCell {
         self.infoLabel.font = UIFont(name: "Roboto-Regular", size: 12)
     }
     
-
-    func setData(title: String, questionImageURL: URL) {
-        //imageView.sd_setImage(with: questionImageURL, completed: nil)
-        infoLabel.text = title
+    func setFirstHorizontalData(title: String?, currentPrice: Price?, discount: String?, oldPrice: Price?, image: String?) {
+        if let title = title, let currentPrice = currentPrice, let priceValue = currentPrice.value, let currentCurrency = currentPrice.currency, let discount = discount, let oldPrice = oldPrice, let oldValue = oldPrice.value, let imageString = image {
+            infoLabel.text = title
+            currentPriceLabel.text = "\(priceValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            discountLabel.text = discount
+            oldValueLabel.text = "\(oldValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            discountLabel.text = discount
+            let imageURL = URL(string: imageString)
+            imageView.sd_setImage(with: imageURL, completed: nil)
+        }
+    }
+    
+    func setSecondHorizontalData(title: String?, currentPrice: Price?, oldPrice: Price?, image: String?) {
+        if let title = title, let currentPrice = currentPrice, let priceValue = currentPrice.value, let currentCurrency = currentPrice.currency, let oldPrice = oldPrice, let oldValue = oldPrice.value, let imageString = image {
+            infoLabel.text = title
+            currentPriceLabel.text = "\(priceValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            oldValueLabel.text = "\(oldValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            let imageURL = URL(string: imageString)
+            imageView.sd_setImage(with: imageURL, completed: nil)
+        }
     }
     
     override func layoutSubviews() {
@@ -148,10 +165,53 @@ class HorizontalCollectionCell: UICollectionViewCell {
            contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2))
        }
     
-    func setUI() {
+    func setFirstHorizontalUI() {
         contentView.addSubview(imageView)
         self.contentView.sendSubviewToBack(imageView)
        
+        imageView.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(8)
+            make.leading.equalTo(contentView.snp.leading).offset(8)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.5)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-8)
+        }
+        
+        contentView.addSubview(containerView)
+        containerView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-10)
+            make.top.equalTo(imageView.snp.bottom).offset(8)
+            make.width.equalTo(imageView.snp.width)
+            make.leading.equalTo(imageView.snp.leading).offset(1)
+        }
+        
+        containerView.addSubview(infoLabel)
+        infoLabel.snp.makeConstraints { make in
+            make.top.equalTo(containerView.snp.top)
+            make.width.equalTo(containerView.snp.width)
+            make.height.equalTo(40)
+        }
+        
+        containerView.addSubview(currentPriceLabel)
+        currentPriceLabel.snp.makeConstraints { make in
+            make.top.equalTo(infoLabel.snp.bottom).offset(8)
+            make.width.equalTo(containerView.snp.width)
+            make.height.equalTo(18)
+        }
+        
+        containerView.addSubview(bottomStackView)
+        bottomStackView.snp.makeConstraints { make in
+            make.leading.equalTo(currentPriceLabel.snp.leading).offset(1)
+            make.width.equalToSuperview().multipliedBy(0.7)
+            make.top.equalTo(currentPriceLabel.snp.bottom)
+            make.height.equalTo(16)
+        }
+    }
+    
+    
+    
+    func setSecondHorizontalUI() {
+        contentView.addSubview(imageView)
+        self.contentView.sendSubviewToBack(imageView)
         imageView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(8)
             make.leading.equalTo(contentView.snp.leading).offset(8)
@@ -171,40 +231,22 @@ class HorizontalCollectionCell: UICollectionViewCell {
         infoLabel.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
             make.width.equalTo(containerView.snp.width)
-            make.height.equalTo(containerView.snp.height).multipliedBy(0.5)
+            make.height.equalTo(30)
         }
         
         containerView.addSubview(currentPriceLabel)
         currentPriceLabel.snp.makeConstraints { make in
             make.top.equalTo(infoLabel.snp.bottom).offset(8)
             make.width.equalTo(containerView.snp.width)
-            make.height.equalTo(infoLabel.snp.height).multipliedBy(0.4)
+            make.height.equalTo(14)
         }
-        
-        
-//        containerView.addSubview(oldValueLabel)
-//        oldValueLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(infoLabel.snp.leading)
-//            make.width.equalTo(infoLabel.snp.width).multipliedBy(0.5)
-//            make.height.equalTo(currentPriceLabel.snp.height)
-//            make.top.equalTo(currentPriceLabel.snp.bottom)
-//        }
-//
-//        containerView.addSubview(discountLabel)
-//        discountLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(oldValueLabel.snp.trailing).offset(2)
-//            make.width.equalTo(infoLabel.snp.width)
-//            make.height.equalTo(currentPriceLabel.snp.height)
-//            make.top.equalTo(currentPriceLabel.snp.bottom)
-//        }
         
         containerView.addSubview(bottomStackView)
         bottomStackView.snp.makeConstraints { make in
-            make.leading.equalTo(currentPriceLabel.snp.leading)
+            make.leading.equalTo(currentPriceLabel.snp.leading).offset(1)
             make.width.equalToSuperview().multipliedBy(0.7)
             make.top.equalTo(currentPriceLabel.snp.bottom)
-            make.height.equalTo(infoLabel.snp.height).multipliedBy(0.4)
+            make.bottom.equalTo(containerView.snp.bottom)
         }
-        
     }
 }

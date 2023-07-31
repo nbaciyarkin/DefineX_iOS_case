@@ -14,12 +14,12 @@ class VerticalCollectionTabelCell: UITableViewCell {
     
     static let identifier = "VerticalCollectionTabelCell"
     
-    private let plantTypesCollectionView: UICollectionView = {
+    private let verticalCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.5 , height: 172)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 1
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.1 , height: 330)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(VerticalCollectionCell.self, forCellWithReuseIdentifier: VerticalCollectionCell.identifier)
@@ -29,31 +29,31 @@ class VerticalCollectionTabelCell: UITableViewCell {
         return collectionView
     }()
     
-//    var plantList = [Plant](){
-//        didSet{
-//            DispatchQueue.main.async {
-//                self.plantTypesCollectionView.reloadData()
-//            }
-//        }
-//
-//    }
+    private var products = [Product](){
+        didSet{
+            DispatchQueue.main.async {
+                self.verticalCollectionView.reloadData()
+            }
+        }
+
+    }
 
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(plantTypesCollectionView)
-        plantTypesCollectionView.delegate = self
-        plantTypesCollectionView.dataSource = self
+        contentView.addSubview(verticalCollectionView)
+        verticalCollectionView.delegate = self
+        verticalCollectionView.dataSource = self
         setUI()
     }
     
     override func layoutSubviews() {
            super.layoutSubviews()
-           contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24))
+           contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1))
        }
 
     func setUI() {
-        plantTypesCollectionView.snp.makeConstraints { make in
+        verticalCollectionView.snp.makeConstraints { make in
             make.leading.equalTo(contentView.snp.leading)
             make.top.equalTo(contentView.snp.top)
             make.trailing.equalTo(contentView.snp.trailing)
@@ -61,17 +61,18 @@ class VerticalCollectionTabelCell: UITableViewCell {
         }
     }
     
-//    func setData(list:[Plant]){
-//        self.plantList = list
-//        DispatchQueue.main.async {
-//            self.plantTypesCollectionView.reloadData()
-//        }
-//        rebuildCollectionView(plantCount: plantList.count)
-//    }
+    func sendData(list:[Product]){
+        self.products = list
+        DispatchQueue.main.async {
+            self.verticalCollectionView.reloadData()
+        }
+        print("ZIP")
+        rebuildCollectionView(plantCount: products.count)
+    }
     
     func rebuildCollectionView(plantCount: Int){
-        plantTypesCollectionView.snp.removeConstraints()
-        plantTypesCollectionView.snp.makeConstraints { make in
+        verticalCollectionView.snp.removeConstraints()
+        verticalCollectionView.snp.makeConstraints { make in
             make.height.equalTo(plantCount * 100)
             make.leading.equalTo(contentView.snp.leading)
             make.top.equalTo(contentView.snp.top)
@@ -86,15 +87,15 @@ class VerticalCollectionTabelCell: UITableViewCell {
 
 extension VerticalCollectionTabelCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return plantList.count
-        10
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCollectionCell.identifier, for: indexPath) as? VerticalCollectionCell else {
             return UICollectionViewCell()
         }
-        //let plant = plantList[indexPath.row]
+        let product = products[indexPath.row]
+        print("asd")
 //        if let url = URL(string: plant.image?.url ??  "https://firebasestorage.googleapis.com/v0/b/flora---plant-identifier.appspot.com/o/public%2Fcard2.png?alt=media"){
 //            cell.setData(title: plant.title ?? "Edible Plants", questionImageURL: url)
 //            print(plant.title)

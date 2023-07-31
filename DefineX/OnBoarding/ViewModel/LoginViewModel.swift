@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import SkyFloatingLabelTextField
+import Alamofire
+import Combine
 
 class LoginViewModel {
     
@@ -20,7 +22,7 @@ class LoginViewModel {
     let startColor = UIColor(red: 26/255, green: 115/255, blue: 233/255, alpha: 1.0).cgColor
     let endColor = UIColor(red: 108/255, green: 146/255, blue: 244/255, alpha: 1.0).cgColor
     
-    
+    private var cancellables = Set<AnyCancellable>()
     
 //    private(set) var isLoading = Bindable<Bool>()
 //    private(set) var error = Bindable<Error>()
@@ -34,6 +36,9 @@ class LoginViewModel {
 //    var currentMovieCount: Int {
 //        return movies.value?.count ?? 0
 //    }
+    //func getProducts() -> {
+        
+    //}
 //
 //    func getMovies(query:String, noLoading: Bool = false, shouldRefresh: Bool = false){
 //        if shouldRefresh {
@@ -113,11 +118,11 @@ extension LoginViewModel {
     
     func gradientColor(bounds: CGRect, gradientLayer :CAGradientLayer, colors:[CGColor]) -> UIColor? {
         UIGraphicsBeginImageContext(gradientLayer.bounds.size)
-          //create UIImage by rendering gradient layer.
+        //create UIImage by rendering gradient layer.
         gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-          //get gradient UIcolor from gradient UIImage
+        //get gradient UIcolor from gradient UIImage
         return UIColor(patternImage: image!)
     }
     
@@ -131,4 +136,37 @@ extension LoginViewModel {
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         return gradient
     }
+    
+    func handleToken(loginResponse: LoginResponse) {
+        if let token = loginResponse.token {
+            UserDefaults.standard.setToken(value: token)
+            UserDefaults.standard.setAuthanticatedUser(value: true)
+            print("Token saved to UserDefaults.")
+        }
+    }
+
+    func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        let parameters: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        
+        let cancellable = ServiceManager.shared.post(path: ApiCaller.ServiceEndPoint.logIn(), parameters: parameters)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("HTTP request completed.")
+                case .failure(let error):
+                    print("Error fetching data: \(error)")
+                }
+            }, receiveValue: { (loginResponse: LoginResponse) in
+                // Handle the login response here
+                print(loginResponse)
+                self.handleToken(loginResponse: loginResponse)
+                print(UserDefaults.standard.getToken())
+                completion(true)
+            })
+        cancellables.insert(cancellable)
+    }
+
 }

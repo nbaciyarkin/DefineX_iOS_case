@@ -91,4 +91,10 @@ extension UILabel {
     }
 }
 
+extension Double {
+    var stringValueWithTwoDecimalPlaces: String {
+        return String(format: "%.2f", self)
+    }
+}
+
 
