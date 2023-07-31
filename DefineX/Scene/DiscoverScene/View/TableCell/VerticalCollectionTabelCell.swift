@@ -67,13 +67,14 @@ class VerticalCollectionTabelCell: UITableViewCell {
             self.verticalCollectionView.reloadData()
         }
         print("ZIP")
+        print(self.products)
         rebuildCollectionView(plantCount: products.count)
     }
     
     func rebuildCollectionView(plantCount: Int){
         verticalCollectionView.snp.removeConstraints()
         verticalCollectionView.snp.makeConstraints { make in
-            make.height.equalTo(plantCount * 100)
+            make.height.equalTo(plantCount * 250)
             make.leading.equalTo(contentView.snp.leading)
             make.top.equalTo(contentView.snp.top)
             make.trailing.equalTo(contentView.snp.trailing)
@@ -95,13 +96,27 @@ extension VerticalCollectionTabelCell: UICollectionViewDataSource, UICollectionV
             return UICollectionViewCell()
         }
         let product = products[indexPath.row]
-        print("asd")
-//        if let url = URL(string: plant.image?.url ??  "https://firebasestorage.googleapis.com/v0/b/flora---plant-identifier.appspot.com/o/public%2Fcard2.png?alt=media"){
-//            cell.setData(title: plant.title ?? "Edible Plants", questionImageURL: url)
-//            print(plant.title)
-           
-        //}
+        if let oldValue = product.oldPrice?.value {
+            cell.setUIWithOldPrice()
+            cell.setDataWithOldPrice(title: product.description, currentPrice: product.price, oldPrice: product.oldPrice, image: product.imageUrl, rate: product.ratePercentage)
+        } else {
+            cell.setUI()
+            cell.setDataWithPrice(title: product.description, currentPrice: product.price, image: product.imageUrl, rateImage: product.ratePercentage)
+            
+        }
         return cell
-       
+    }
+}
+
+extension VerticalCollectionTabelCell: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let product = products[indexPath.item]
+        
+         if let oldValue = product.oldPrice {
+             return CGSize(width: UIScreen.main.bounds.width / 2.1 , height: 248)
+         }
+         else {
+             return CGSize(width: UIScreen.main.bounds.width / 2.1 , height: 328)
+         }
     }
 }

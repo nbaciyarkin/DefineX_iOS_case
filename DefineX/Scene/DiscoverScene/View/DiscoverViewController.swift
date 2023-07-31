@@ -42,7 +42,7 @@ class DiscoverViewController: UIViewController {
             self.tableView.reloadData()
             //print(viewModel.firstHorizontalProducts.value!)
         }
-        
+
         viewModel.secondHorizontalProducts.bind { [weak self] _ in
             guard let self = self else { return }
             //self.movieCounterLabel.isHidden = self.viewModel.currentMovieCount == 0

@@ -24,14 +24,16 @@ extension ApiCaller {
         
         static func getFirstHorizontalList() -> String {
             let token = UserDefaults.standard.getToken()
-            return "\(Base_URL.rawValue)\(discoverFirstHorizontalList.rawValue)?token=\(token)"
+            return "\(Base_URL.rawValue)\(discoverFirstHorizontalList.rawValue)"
         }
         
         static func getSecondHorizontalList() -> String {
+            let token = UserDefaults.standard.getToken()
             return  "\(Base_URL.rawValue)\(discoverSecondHorizontalList.rawValue)"
         }
         
         static func getThirthTwoColumnList() -> String {
+            let token = UserDefaults.standard.getToken()
             return  "\(Base_URL.rawValue)\(discoverThirthTwoColumnList.rawValue)"
         }
     }

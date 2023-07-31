@@ -8,6 +8,7 @@
 import Foundation
 import SnapKit
 import UIKit
+import SDWebImage
 
 class VerticalCollectionCell: UICollectionViewCell {
     static let identifier = "VerticalCollectionCell"
@@ -111,7 +112,7 @@ class VerticalCollectionCell: UICollectionViewCell {
         addShadow()
         containerView.backgroundColor = .clear
         //setUIWithOldPrice()
-        setUI()
+        //setUI()
     }
     
     required init?(coder: NSCoder) {
@@ -141,9 +142,24 @@ class VerticalCollectionCell: UICollectionViewCell {
     }
     
 
-    func setData(title: String, questionImageURL: URL) {
-        imageView.sd_setImage(with: questionImageURL, completed: nil)
-        infoLabel.text = title
+    func setDataWithOldPrice(title: String?, currentPrice: Price?, oldPrice: Price?, image: String?, rate: Int?) {
+        if let title = title, let currentPrice = currentPrice, let priceValue = currentPrice.value, let currentCurrency = currentPrice.currency, let oldPrice = oldPrice, let oldValue = oldPrice.value, let imageString = image {
+            infoLabel.text = title
+            currentPriceLabel.text = "\(priceValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            oldValueLabel.text = "\(oldValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            let imageURL = URL(string: imageString)
+            imageView.sd_setImage(with: imageURL, completed: nil)
+        }
+    }
+    
+    func setDataWithPrice(title: String?, currentPrice: Price?, image: String?, rateImage: Int?) {
+        if let title = title, let currentPrice = currentPrice, let priceValue = currentPrice.value, let currentCurrency = currentPrice.currency, let imageString = image {
+            infoLabel.text = title
+            currentPriceLabel.text = "\(priceValue.stringValueWithTwoDecimalPlaces)\(currentCurrency)US"
+            let imageURL = URL(string: imageString)
+            imageView.sd_setImage(with: imageURL, completed: nil)
+            rateIconView.image = UIImage(named: "rate_icon")
+        }
     }
     
     override func layoutSubviews() {
@@ -159,6 +175,14 @@ class VerticalCollectionCell: UICollectionViewCell {
         currentPriceLabel.snp.removeConstraints()
         bottomStackView.snp.removeConstraints()
         rateIconView.snp.removeConstraints()
+        
+        imageView.removeFromSuperview()
+        containerView.removeFromSuperview()
+        infoLabel.removeFromSuperview()
+        currentPriceLabel.removeFromSuperview()
+        bottomStackView.removeFromSuperview()
+        rateIconView.removeFromSuperview()
+        discountLabel.removeFromSuperview()
         
         contentView.addSubview(imageView)
         self.contentView.sendSubviewToBack(imageView)
@@ -208,6 +232,14 @@ class VerticalCollectionCell: UICollectionViewCell {
         currentPriceLabel.snp.removeConstraints()
         bottomStackView.snp.removeConstraints()
         rateIconView.snp.removeConstraints()
+        
+        imageView.removeFromSuperview()
+        containerView.removeFromSuperview()
+        infoLabel.removeFromSuperview()
+        currentPriceLabel.removeFromSuperview()
+        bottomStackView.removeFromSuperview()
+        rateIconView.removeFromSuperview()
+        discountLabel.removeFromSuperview()
         
         contentView.addSubview(imageView)
         self.contentView.sendSubviewToBack(imageView)

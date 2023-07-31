@@ -26,7 +26,7 @@ class Service{
             }
         }
     
-    static func getSecondHorizontalList(onSucces: @escaping (Page) -> (), onError: @escaping (AFError) -> ()) {
+    static func getSecondHorizontalList(onSucces: @escaping (Page?) -> (), onError: @escaping (AFError) -> ()) {
         ServiceManager.shared.fetch(path: ApiCaller.ServiceEndPoint.getSecondHorizontalList(), token: UserDefaults.standard.getToken()) { (response: Page) in
             onSucces(response)
         } onError: { error in
@@ -34,7 +34,7 @@ class Service{
         }
     }
     
-    static func getThirthTwoColumnList(onSucces: @escaping (Page) -> (), onError: @escaping (AFError) -> ()) {
+    static func getThirthTwoColumnList(onSucces: @escaping (Page?) -> (), onError: @escaping (AFError) -> ()) {
         ServiceManager.shared.fetch(path: ApiCaller.ServiceEndPoint.getThirthTwoColumnList(), token: UserDefaults.standard.getToken()) { (response: Page) in
             onSucces(response)
         } onError: { error in

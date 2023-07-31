@@ -53,14 +53,14 @@ class DiscoverViewModel {
     
     func getSecondHorizontalData(noLoading: Bool = false, shouldRefresh: Bool = false){
         if shouldRefresh {
-            self.secondHorizontalProductList.removeAll()
+            self.verticalProductList.removeAll()
             isLoading.value = true
         }
         guard hasMore else { return }
         Service.getSecondHorizontalList {  [weak self] page in
             guard let self = self else {return}
             self.isLoading.value = false
-            if let products = page.list {
+            if let products = page?.list {
                 self.secondHorizontalProductList.append(contentsOf: products)
                 self.secondHorizontalProducts.value = self.firstHorizontalProductList
                 self.shouldDisplayLoading = false
@@ -77,17 +77,18 @@ class DiscoverViewModel {
     
     func getVerticalData(noLoading: Bool = false, shouldRefresh: Bool = false){
         if shouldRefresh {
-            self.secondHorizontalProductList.removeAll()
+            self.verticalProductList.removeAll()
             isLoading.value = true
         }
         guard hasMore else { return }
         Service.getThirthTwoColumnList {  [weak self] page in
             guard let self = self else {return}
             self.isLoading.value = false
-            if let products = page.list {
+            if let products = page?.list {
                 self.verticalProductList.append(contentsOf: products)
                 self.verticalProducts.value = self.verticalProductList
                 self.shouldDisplayLoading = false
+                print(self.verticalProducts.value)
             }
             
             self.shouldDisplayLoading = false
@@ -96,6 +97,7 @@ class DiscoverViewModel {
             self.isLoading.value = false
             self.shouldDisplayLoading = false
             self.error.value = error
+            print(error.localizedDescription)
         }
     }
 
@@ -227,8 +229,7 @@ extension DiscoverViewModel {
         
         else if sectionItem.sectionType == .VerticlalCollection {
             if sectionItem.cellList[indexPath.row].cellType == .VerticlalCollection {
-                //return  100 * CGFloat(plantList.count)
-                return 150 * 10
+                return  200 * CGFloat(verticalProductList.count)
             }
         }
         return 100
