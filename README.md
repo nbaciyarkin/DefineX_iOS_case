@@ -34,7 +34,7 @@
 
 
 - Düzgün formatta e-mail değeri girildiğinde e-mail UITextField'ının alt çizgisi yeşil renge dönüştürülüyor.
-<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/850a62e7-4868-4323-b946-e325790ea77b.png" alt="Swagger" width="200" height="400"/><img src="https://user-images.githubusercontent.com/assets/60100510/018875f0-b800-4e53-90c9-a1e49c735a03.png" alt="Swagger" width="200" height="400"/>  <img 
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/850a62e7-4868-4323-b946-e325790ea77b.png" alt="Swagger" width="200" height="400"/>  <img src="https://user-images.githubusercontent.com/assets/60100510/018875f0-b800-4e53-90c9-a1e49c735a03.png" alt="Swagger" width="200" height="400"/>  <img 
 
 
 
