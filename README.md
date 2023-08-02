@@ -1,6 +1,6 @@
 # DefineX_iOS_case
 
- Proje geliştirilirken programmaticallyUI yakalşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
+ Proje geliştirilirken programmaticallyUI yakalaşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
 
 - Package Managers
   - SPM(Swift Package Manager)
