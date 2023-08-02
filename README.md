@@ -37,13 +37,8 @@
 
 
 <h2>Discover Screen</h2> 
-- DiscoverScene açıldı(-en)
+ - DiscoverScene açıldı(-en)
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/bacc7811-ccd6-4646-82b9-1cc1657d0fb7.png" alt="Swagger" width="200" height="400"/>
-
-
-- TextFiled'a en az 3 kelime girildikten sonra filmler listelenmeye başlıyor
-
-<img src="https://user-images.githubusercontent.com/60100510/222155855-ab1ce775-5421-4b45-b445-2f71187879f8.png" alt="Swagger" width="200" height="400"/>  <img src="https://user-images.githubusercontent.com/60100510/222156099-2ee222ab-6ef1-4598-8b68-162a2f35483d.png" alt="Swagger" width="200" height="400"/>
 
 <h2>Movie Detail Screen</h2> 
 <img src="https://user-images.githubusercontent.com/60100510/222156711-60e50090-2ed0-4364-b3d0-e3df45abca4e.png" alt="Swagger" width="200" height="400"/>
