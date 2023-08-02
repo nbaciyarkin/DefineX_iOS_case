@@ -24,8 +24,6 @@
     - Firebase/RemoteConfig
     - Firebase/Messaging
    
-    
-
 # DefineX - SCENES
 <h2>Login Screen</h2> 
 
@@ -38,9 +36,10 @@
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/018875f0-b800-4e53-90c9-a1e49c735a03.png" alt="Swagger" width="200" height="400"/>
 
 
-<h2>Home Screen</h2> 
-- Ekran açıldı
-<img src="https://user-images.githubusercontent.com/60100510/222148736-d914d70c-83b5-4b00-9ca4-c60824146a57.png" alt="Swagger" width="200" height="400"/>
+<h2>Discover Screen</h2> 
+- DiscoverScene açıldı(-en)
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/bacc7811-ccd6-4646-82b9-1cc1657d0fb7.png" alt="Swagger" width="200" height="400"/>
+
 
 - TextFiled'a en az 3 kelime girildikten sonra filmler listelenmeye başlıyor
 
