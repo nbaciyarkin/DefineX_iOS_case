@@ -29,14 +29,12 @@
 # pinsoftcase
 <h2>Login Screen</h2> 
 
-
-      
-
 - END POINT olmayan butonlar için "Coming Soon" ya da "Çok Yakında" yazısı ile Ekranın Üst tarafında AlertView basıldı.
-<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/99a526b5-ee74-44dd-b9d8-57ebd0f334e1.png" alt="Swagger" width="200" height="400"/>     
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/99a526b5-ee74-44dd-b9d8-57ebd0f334e1.png" alt="Swagger" width="200" height="400"/>
 
-![ComingSoon]()
 
+- Düzgün formatta e-mail değeri girildiğinde e-mail UITextField'ının alt çizgisi yeşil renge dönüştürülüyor.
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/850a62e7-4868-4323-b946-e325790ea77b.png" alt="Swagger" width="200" height="400"/>
 
 
 <h2>Home Screen</h2> 
