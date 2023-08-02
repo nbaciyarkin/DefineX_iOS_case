@@ -3,19 +3,10 @@
 # pinsoftcase
 <h2>Login Screen</h2> 
 
-- Internet bağlantısı başarısiz ise
-     - END POINT olmayan butonlar için "Coming Soon" ya da "Çok Yakında" yazısı ile Ekranın Üst tarafında AlertView basıldı.
-<img src="https://user-images.githubusercontent.com/60100510/222154620-fd13c06a-86ac-4bd4-8167-2b9b0d9d9c72.png" alt="Swagger" width="200" height="400"/>     
-   
+- END POINT olmayan butonlar için "Coming Soon" ya da "Çok Yakında" yazısı ile Ekranın Üst tarafında AlertView basıldı.
+<img src="[https://user-images.githubusercontent.com/60100510/222154620-fd13c06a-86ac-4bd4-8167-2b9b0d9d9c72](https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/c1c4e94c-7a50-4bf8-b31e-136b3677c750).png" alt="Swagger" width="200" height="400"/>     
 
-- Internet bağlantısı başarılı ise 
-<img src="https://user-images.githubusercontent.com/60100510/222148508-0862e2af-2166-42d8-827e-55701a5fb7e0.png" alt="Swagger" width="200" height="400"/>
-  - Ekrana TextLabel(PINSOFT) yazısı eklendikten 3 saniye sonra Home sayfasına geçildi 
 
-![Simulator Screenshot - iPhone 14 Pro - 2023-08-02 at 11 23 41]()
-
-<img src="https://user-images.githubusercontent.com/60100510/222148508-0862e2af-2166-42d8-827e-55701a5fb7e0.png" alt="Swagger" width="200" height="400"/>
-  - Ekrana TextLabel(PINSOFT) yazısı eklendikten 3 saniye sonra Home sayfasına geçildi 
 
 
 <h2>Home Screen</h2> 
