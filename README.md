@@ -44,7 +44,7 @@
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/8b19d4e8-9639-410f-bd33-a52a0deef1c6" alt="Swagger" width="200" height="400"/>
 
 
-Firebase Tracker implement edildi ve görüntülenen film detayı verileri FirebaseAnalytics'e loglandı. 
+Firebase Tracker implement edildi ve görüntülenen controller  verileri FirebaseAnalytics'e loglandı. 
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/e830569a-3f06-4994-83f5-0a9d0d30cf18.png" alt="Swagger" width="900" height="500"/>
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/bbbb18e4-06c6-4d5c-aa1d-e23caede92ea.png" alt="Swagger" width="900" height="500"/>
 
