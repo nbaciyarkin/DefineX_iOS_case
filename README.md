@@ -1,7 +1,36 @@
 # DefineX_iOS_case
 
+ Proje geliştirilirken programmaticallyUI yakalşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
+
+- Package Managers
+  - SPM(Swift Package Manager)
+  - Kullanılılan 3rd Part Libraries:
+    - Alamofire
+    - SDWebImage
+    - SkyFloatingLabelTextField
+    - SnapKit
+- Homebrew
+  - Kullanılılan 3rd Part Libraries:
+    Swiftlint
+
+- CocoaPods
+  - Kullanılılan 3rd Part Libraries:
+    - SwiftGen
+    - SwiftMessages
+    - Firebase
+    - Firebase/Core
+    - Firebase/Analytics
+    - Firebase/Crashlytics
+    - Firebase/RemoteConfig
+    - Firebase/Messaging
+   
+    
+
 # pinsoftcase
 <h2>Login Screen</h2> 
+
+
+      
 
 - END POINT olmayan butonlar için "Coming Soon" ya da "Çok Yakında" yazısı ile Ekranın Üst tarafında AlertView basıldı.
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/99a526b5-ee74-44dd-b9d8-57ebd0f334e1.png" alt="Swagger" width="200" height="400"/>     
