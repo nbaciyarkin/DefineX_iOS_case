@@ -37,10 +37,7 @@ class DiscoverViewModel {
             if let products = page?.list {
                 self.firstHorizontalProductList.append(contentsOf: products)
                 self.firstHorizontalProducts.value = self.firstHorizontalProductList
-                self.shouldDisplayLoading = false
-                print(self.firstHorizontalProducts.value)
             }
-
             self.shouldDisplayLoading = false
         }onError: { [weak self] error in
             guard let self = self else { return }
@@ -52,7 +49,7 @@ class DiscoverViewModel {
 
     func getSecondHorizontalData(noLoading: Bool = false, shouldRefresh: Bool = false) {
         if shouldRefresh {
-            self.verticalProductList.removeAll()
+            self.secondHorizontalProductList.removeAll()
             isLoading.value = true
         }
         guard hasMore else { return }
@@ -62,9 +59,7 @@ class DiscoverViewModel {
             if let products = page?.list {
                 self.secondHorizontalProductList.append(contentsOf: products)
                 self.secondHorizontalProducts.value = self.firstHorizontalProductList
-                self.shouldDisplayLoading = false
             }
-
             self.shouldDisplayLoading = false
         }onError: { [weak self] error in
             guard let self = self else { return }
@@ -86,8 +81,6 @@ class DiscoverViewModel {
             if let products = page?.list {
                 self.verticalProductList.append(contentsOf: products)
                 self.verticalProducts.value = self.verticalProductList
-                self.shouldDisplayLoading = false
-                print(self.verticalProducts.value)
             }
 
             self.shouldDisplayLoading = false
@@ -96,8 +89,17 @@ class DiscoverViewModel {
             self.isLoading.value = false
             self.shouldDisplayLoading = false
             self.error.value = error
-            print(error.localizedDescription)
         }
+    }
+    
+    func removeProducts(){
+        firstHorizontalProducts.value?.removeAll()
+        firstHorizontalProductList.removeAll()
+        secondHorizontalProducts.value?.removeAll()
+        secondHorizontalProductList.removeAll()
+        verticalProducts.value?.removeAll()
+        verticalProductList.removeAll()
+        hasMore = false
     }
 
 }
@@ -135,20 +137,26 @@ extension DiscoverViewModel {
         tableView.register(VerticalCollectionTabelCell.self, forCellReuseIdentifier: VerticalCollectionTabelCell.identifier)
     }
 
-    func createFirstHorizontalCell(firstHorizontalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> FirstHorizontalTabelCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FirstHorizontalTabelCell.identifier, for: indexPath) as! FirstHorizontalTabelCell
+    func createFirstHorizontalCell(firstHorizontalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstHorizontalTabelCell.identifier, for: indexPath) as? FirstHorizontalTabelCell else {
+            return UITableViewCell()
+        }
         cell.sentData(list: firstHorizontalCell)
         return cell
     }
 
-    func createSecondHorizontalCell(secondHorizontalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> SecondHorizontalTableCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SecondHorizontalTableCell.identifier, for: indexPath) as! SecondHorizontalTableCell
+    func createSecondHorizontalCell(secondHorizontalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SecondHorizontalTableCell.identifier, for: indexPath) as? SecondHorizontalTableCell else {
+            return UITableViewCell()
+        }
         cell.sendData(list: secondHorizontalCell)
         return cell
     }
 
-    func createVerticalCollectionCell(thirdVerticalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> VerticalCollectionTabelCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: VerticalCollectionTabelCell.identifier, for: indexPath) as! VerticalCollectionTabelCell
+    func createVerticalCollectionCell(thirdVerticalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: VerticalCollectionTabelCell.identifier, for: indexPath) as? VerticalCollectionTabelCell else {
+            return UITableViewCell()
+        }
         cell.sendData(list: thirdVerticalCell)
 
         return cell
@@ -199,7 +207,7 @@ extension DiscoverViewModel {
         return list
     }
 
-    func createTableViewCell(firstHorizontalList: [Product], _ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
+    func createTableViewCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         let sectionItem = sectionList[indexPath.section]
         if sectionItem.sectionType == .FirstHorizontal {
             return createFirstHorizontalCell(firstHorizontalCell: firstHorizontalProductList, tableView: tableView, indexPath: indexPath)

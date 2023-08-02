@@ -220,21 +220,14 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 0 {
-            print(textField.text)
-            print("üstteki dokunuş geldi")
             emailTextField.tintColor = Asset.loginSelectedColor.color
         } else if textField.tag == 1 {
-            print("alttaki dokunuş geldi")
             passwordTextField.tintColor = Asset.loginSelectedColor.color.withAlphaComponent(1.0)
         }
-        print("TextField did begin editing method called")
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-
-        print("TextField did end editing method called\(textField.text)")
         if textField.tag == 0 {
-            print("üstteki dokunuş bitti")
             if let text = emailTextField.text {
                 if !text.contains("@") {
                     emailTextField.lineColor = .red
@@ -245,36 +238,27 @@ extension LoginViewController: UITextFieldDelegate {
             emailTextField.tintColor = Asset.loginSelectedColor.color.withAlphaComponent(0.4)
 
         } else if textField.tag == 1 {
-            print("alttaki dokunuş bitti")
-
             passwordTextField.tintColor = Asset.loginSelectedColor.color
         }
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-
-        print("TextField should begin editing method called")
         return true
     }
 
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-
-        print("TextField should clear method called")
         return true
     }
 
     private func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        print("TextField should end editing method called")
         return true
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("While entering the characters this method gets called")
         return true
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("TextField should return method called")
         textField.resignFirstResponder()
         return true
     }

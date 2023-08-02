@@ -139,7 +139,6 @@ extension LoginViewModel {
         if let token = loginResponse.token {
             UserDefaults.standard.setToken(value: token)
             UserDefaults.standard.setAuthanticatedUser(value: true)
-            print("Token saved to UserDefaults.")
         }
     }
 
@@ -161,7 +160,6 @@ extension LoginViewModel {
                 // Handle the login response here
                 print(loginResponse)
                 self.handleToken(loginResponse: loginResponse)
-                print(UserDefaults.standard.getToken())
                 completion(true)
             })
         cancellables.insert(cancellable)

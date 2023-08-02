@@ -64,7 +64,6 @@ class VerticalCollectionTabelCell: UITableViewCell {
         DispatchQueue.main.async {
             self.verticalCollectionView.reloadData()
         }
-        print(self.products)
         rebuildCollectionView(plantCount: products.count)
     }
 
