@@ -11,7 +11,7 @@
     - SnapKit
 - Homebrew
   - 3rd Party Libraries:
-    Swiftlint
+    - Swiftlint
 
 - CocoaPods
   - 3rd Part Libraries:
