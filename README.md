@@ -37,7 +37,10 @@
 
 
 <h2>Discover Screen</h2> 
- - DiscoverScene açıldı(-en)
+ <h3>Discover Screen</h3>
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/bacc7811-ccd6-4646-82b9-1cc1657d0fb7.png" alt="Swagger" width="200" height="400"/>
+
+ - DiscoverScene açıldı(-TR).
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/bacc7811-ccd6-4646-82b9-1cc1657d0fb7.png" alt="Swagger" width="200" height="400"/>
 
 <h2>Movie Detail Screen</h2> 
