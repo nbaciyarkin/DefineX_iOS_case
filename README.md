@@ -4,7 +4,7 @@
 <h2>Login Screen</h2> 
 
 - END POINT olmayan butonlar için "Coming Soon" ya da "Çok Yakında" yazısı ile Ekranın Üst tarafında AlertView basıldı.
-<img src="https://user-images.githubusercontent.com/60100510/222154620-fd13c06a-86ac-4bd4-8167-2b9b0d9d9c72.png" alt="Swagger" width="200" height="400"/>     
+<img src="https://user-images.githubusercontent.com/60100510/9ac67e19-478c-4b45-9b88-f6fc93bff631.png" alt="Swagger" width="200" height="400"/>     
 
 
 
