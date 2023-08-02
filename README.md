@@ -4,7 +4,7 @@
 <h2>Login Screen</h2> 
 
 - END POINT olmayan butonlar için "Coming Soon" ya da "Çok Yakında" yazısı ile Ekranın Üst tarafında AlertView basıldı.
-<img src="[https://user-images.githubusercontent.com/60100510/9ac67e19-478c-4b45-9b88-f6fc93bff631](https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/99a526b5-ee74-44dd-b9d8-57ebd0f334e1).png" alt="Swagger" width="200" height="400"/>     
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/99a526b5-ee74-44dd-b9d8-57ebd0f334e1.png" alt="Swagger" width="200" height="400"/>     
 
 ![ComingSoon]()
 
