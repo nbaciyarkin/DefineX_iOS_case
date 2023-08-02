@@ -12,13 +12,13 @@ extension UITextField {
     private struct AssociatedKeys {
         static var titleFormatterKey: UInt8 = 0
     }
-    
+
     func setTitleFormatter(_ formatter: ((String) -> String)?) {
         addTarget(self, action: #selector(formatTitle), for: .editingChanged)
         objc_setAssociatedObject(self, &AssociatedKeys.titleFormatterKey, formatter, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         formatTitle()
     }
-    
+
     @objc private func formatTitle() {
         guard let formatter = objc_getAssociatedObject(self, &AssociatedKeys.titleFormatterKey) as? (String) -> String else {
             return
@@ -26,7 +26,6 @@ extension UITextField {
         text = formatter(text ?? "")
     }
 }
-
 
 extension UIColor {
     static func gradientColor(colors: [CGColor], startPoint: CGPoint, endPoint: CGPoint) -> UIColor {
@@ -45,7 +44,6 @@ extension UIColor {
     }
 }
 
-
 extension UILabel {
     func applyGradientText(colors: [UIColor], startPoint: CGPoint, endPoint: CGPoint) {
         let gradientLayer = CAGradientLayer()
@@ -53,16 +51,16 @@ extension UILabel {
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
         gradientLayer.frame = bounds
-        
+
         let textImage = UIGraphicsImageRenderer(size: bounds.size).image { _ in
             layer.render(in: UIGraphicsGetCurrentContext()!)
         }
-        
+
         let gradientMaskLayer = CALayer()
         gradientMaskLayer.frame = bounds
         gradientMaskLayer.contents = textImage.cgImage
         gradientMaskLayer.mask = gradientLayer
-        
+
         layer.addSublayer(gradientMaskLayer)
     }
 }
@@ -79,7 +77,7 @@ extension UIView {
 }
 
 extension UILabel {
-    func setMiddleLineView(label: UILabel){
+    func setMiddleLineView(label: UILabel) {
         // Add a strikethrough attribute to the text
         let strikeThroughAttribute = [
             NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue,
@@ -97,4 +95,16 @@ extension Double {
     }
 }
 
+class InsetLabel: UILabel {
+    var insets: UIEdgeInsets = .zero
 
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: insets))
+    }
+
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + insets.left + insets.right,
+                      height: size.height + insets.top + insets.bottom)
+    }
+}

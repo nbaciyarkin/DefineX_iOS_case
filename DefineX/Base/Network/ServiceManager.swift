@@ -14,7 +14,7 @@ class ServiceManager {
 }
 
 extension ServiceManager {
-    func fetch<T>(path: String, token: String, onSuccess: @escaping (T) -> (), onError: @escaping (AFError) -> ()) where T: Codable {
+    func fetch<T>(path: String, token: String, onSuccess: @escaping (T) -> Void, onError: @escaping (AFError) -> Void) where T: Codable {
         var headers: HTTPHeaders = [:]
         // Assuming you want to set the token as a header
         headers["token"] = UserDefaults.standard.getToken()
@@ -28,7 +28,7 @@ extension ServiceManager {
             }
         }
     }
-    
+
     func post<T: Codable>(path: String, parameters: Parameters) -> AnyPublisher<T, AFError> {
         return AF.request(path, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate()
@@ -37,4 +37,3 @@ extension ServiceManager {
             .eraseToAnyPublisher()
     }
 }
-

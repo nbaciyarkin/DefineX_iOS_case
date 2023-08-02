@@ -13,31 +13,30 @@ import Foundation
 //  Created by Yarkın Gazibaba on 28.07.2023.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 
-//protocol SecondHorizontalTableCell: AnyObject {
+// protocol SecondHorizontalTableCell: AnyObject {
 //    func didTappedGetStartedCell(_ cell: GetStartedTableCell ,indexPath:IndexPath)
-//}
+// }
 
 class SecondHorizontalTableCell: UITableViewCell {
-    
+
     static let identifier = "SecondHorizontalTableCell"
-    //weak var delegate: GetStartedTableCellDelegate?
-    
+    // weak var delegate: GetStartedTableCellDelegate?
+
     var products = [Product]() {
-        didSet{
+        didSet {
             DispatchQueue.main.async {
                 self.horizontalCollectionView.reloadData()
             }
         }
     }
-    
+
     private let horizontalCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3.2 , height: 180)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3.2, height: 180)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 4
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -48,7 +47,6 @@ class SecondHorizontalTableCell: UITableViewCell {
         return collectionView
     }()
 
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(horizontalCollectionView)
@@ -57,7 +55,7 @@ class SecondHorizontalTableCell: UITableViewCell {
         selectionStyle = .none
         setUI()
     }
-    
+
     override func layoutSubviews() {
            super.layoutSubviews()
            contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2))
@@ -72,13 +70,13 @@ class SecondHorizontalTableCell: UITableViewCell {
         }
     }
 
-    func sendData(list:[Product]){
+    func sendData(list: [Product]) {
         self.products = list
         DispatchQueue.main.async {
             self.horizontalCollectionView.reloadData()
         }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -88,19 +86,19 @@ extension SecondHorizontalTableCell: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCollectionCell.identifier, for: indexPath) as? HorizontalCollectionCell else {
             return UICollectionViewCell()
         }
-        
+
         let product = products[indexPath.row]
         cell.setSecondHorizontalData(title: product.description, currentPrice: product.price, oldPrice: product.oldPrice, image: product.imageUrl)
         cell.setSecondHorizontalUI()
         cell.convertsecondHorizontalCell()
         return cell
     }
-    
+
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        delegate?.didTappedGetStartedCell(self, indexPath: indexPath)
 //    }

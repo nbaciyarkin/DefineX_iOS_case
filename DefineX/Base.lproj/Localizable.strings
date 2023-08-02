@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  DefineX
+
+  Created by Yarkın Gazibaba on 2.08.2023.
+  
+*/
+
+// MARK: - GENERAL
+"general_coming_soon_title" = "Coming Soon";
+"successful_title" = "Succesful";
+"error_title" = "Error";
+"warning_title" = "Warning";
+// MARK: - Tabbar
+"tabbar_first_item_title" = "Discover";
+
+// MARK: - LogIn
+"welcome_message" = "Definex Case Study";
+"login_button_title" = "LOGIN";
+"forgot_pass_button_title" = "I FORGOT MY PASS";
+"email_info_title" = "E-mail address";
+"email-placeholder_title" = "E-mail";
+"password_info_title" = "Password";
+"password-placeholder_title" = "Password";
+
+
+// MARK: - DiscoveryScene
+"header_label_title" = "Home";
+

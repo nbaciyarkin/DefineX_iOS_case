@@ -12,11 +12,11 @@ import UIKit
 class DiscoverViewModel {
     private(set) var isLoading = Bindable<Bool>()
     private(set) var error = Bindable<Error>()
-    
+
     private(set) var firstHorizontalProducts = Bindable<[Product]>()
     private(set) var secondHorizontalProducts = Bindable<[Product]>()
     private(set) var verticalProducts = Bindable<[Product]>()
-    
+
     private var firstHorizontalProductList = [Product]()
     private var secondHorizontalProductList = [Product]()
     private var verticalProductList = [Product]()
@@ -24,9 +24,8 @@ class DiscoverViewModel {
     var hasMore = true
     var shouldDisplayLoading = false
     var sectionList = [HomeSectionItem]()
-    
-    
-    func getFirstHorizontalData(noLoading: Bool = false, shouldRefresh: Bool = false){
+
+    func getFirstHorizontalData(noLoading: Bool = false, shouldRefresh: Bool = false) {
         if shouldRefresh {
             self.firstHorizontalProductList.removeAll()
             isLoading.value = true
@@ -41,7 +40,7 @@ class DiscoverViewModel {
                 self.shouldDisplayLoading = false
                 print(self.firstHorizontalProducts.value)
             }
-            
+
             self.shouldDisplayLoading = false
         }onError: { [weak self] error in
             guard let self = self else { return }
@@ -50,8 +49,8 @@ class DiscoverViewModel {
             self.error.value = error
         }
     }
-    
-    func getSecondHorizontalData(noLoading: Bool = false, shouldRefresh: Bool = false){
+
+    func getSecondHorizontalData(noLoading: Bool = false, shouldRefresh: Bool = false) {
         if shouldRefresh {
             self.verticalProductList.removeAll()
             isLoading.value = true
@@ -65,7 +64,7 @@ class DiscoverViewModel {
                 self.secondHorizontalProducts.value = self.firstHorizontalProductList
                 self.shouldDisplayLoading = false
             }
-            
+
             self.shouldDisplayLoading = false
         }onError: { [weak self] error in
             guard let self = self else { return }
@@ -74,8 +73,8 @@ class DiscoverViewModel {
             self.error.value = error
         }
     }
-    
-    func getVerticalData(noLoading: Bool = false, shouldRefresh: Bool = false){
+
+    func getVerticalData(noLoading: Bool = false, shouldRefresh: Bool = false) {
         if shouldRefresh {
             self.verticalProductList.removeAll()
             isLoading.value = true
@@ -90,7 +89,7 @@ class DiscoverViewModel {
                 self.shouldDisplayLoading = false
                 print(self.verticalProducts.value)
             }
-            
+
             self.shouldDisplayLoading = false
         }onError: { [weak self] error in
             guard let self = self else { return }
@@ -101,16 +100,14 @@ class DiscoverViewModel {
         }
     }
 
-
 }
-
 
 enum HomeSectionCellType {
     case FirstHorizontal, SecondHorizontal, VerticlalCollection
 }
 
 enum HomneSectionItemType {
-    case FirstHorizontal, SecondHorizontal,   VerticlalCollection
+    case FirstHorizontal, SecondHorizontal, VerticlalCollection
 }
 
 class HomeCellItem {
@@ -125,37 +122,37 @@ class HomeSectionItem {
 
 // MARK: - TableView SET UP
 extension DiscoverViewModel {
-    
+
     enum CellType: String {
         case UpgradeAccount = "UpgradeAccount"
         case GetStarted = "GetStarted"
         case  VerticlalCollection = " VerticlalCollection"
     }
 
-    func registerCell(tableView: UITableView){
+    func registerCell(tableView: UITableView) {
         tableView.register(FirstHorizontalTabelCell.self, forCellReuseIdentifier: FirstHorizontalTabelCell.identifier)
         tableView.register(SecondHorizontalTableCell.self, forCellReuseIdentifier: SecondHorizontalTableCell.identifier)
         tableView.register(VerticalCollectionTabelCell.self, forCellReuseIdentifier: VerticalCollectionTabelCell.identifier)
     }
-    
-    func createFirstHorizontalCell(firstHorizontalCell:[Product],tableView: UITableView, indexPath: IndexPath) -> FirstHorizontalTabelCell {
+
+    func createFirstHorizontalCell(firstHorizontalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> FirstHorizontalTabelCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FirstHorizontalTabelCell.identifier, for: indexPath) as! FirstHorizontalTabelCell
-        cell.sentData(list:firstHorizontalCell)
+        cell.sentData(list: firstHorizontalCell)
         return cell
     }
 
-    func createSecondHorizontalCell(secondHorizontalCell:[Product],tableView: UITableView, indexPath: IndexPath) -> SecondHorizontalTableCell {
+    func createSecondHorizontalCell(secondHorizontalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> SecondHorizontalTableCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SecondHorizontalTableCell.identifier, for: indexPath) as! SecondHorizontalTableCell
         cell.sendData(list: secondHorizontalCell)
         return cell
     }
-    
-    func createVerticalCollectionCell(thirdVerticalCell:[Product],tableView: UITableView, indexPath: IndexPath) -> VerticalCollectionTabelCell {
+
+    func createVerticalCollectionCell(thirdVerticalCell: [Product], tableView: UITableView, indexPath: IndexPath) -> VerticalCollectionTabelCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: VerticalCollectionTabelCell.identifier, for: indexPath) as! VerticalCollectionTabelCell
         cell.sendData(list: thirdVerticalCell)
+
         return cell
     }
-
 
     func createSectionList() {
         self.sectionList.removeAll()
@@ -163,7 +160,7 @@ extension DiscoverViewModel {
         getstartedSection.sectionType = .FirstHorizontal
         getstartedSection.cellList = createFirstHorizontalSectionCellList()
         sectionList.append(getstartedSection)
-        
+
         let featuresSection = HomeSectionItem()
         featuresSection.sectionType = .SecondHorizontal
         featuresSection.cellList = createSecondHorizontalSectionCellList()
@@ -175,7 +172,7 @@ extension DiscoverViewModel {
         sectionList.append(verticalCollectionSection)
     }
 
-    func createSecondHorizontalSectionCellList() -> [HomeCellItem]{
+    func createSecondHorizontalSectionCellList() -> [HomeCellItem] {
         var list = [HomeCellItem]()
         let secondHorizontalCards = HomeCellItem()
         secondHorizontalCards.cellType = .SecondHorizontal
@@ -184,7 +181,7 @@ extension DiscoverViewModel {
         return list
     }
 
-    func createFirstHorizontalSectionCellList() -> [HomeCellItem]{
+    func createFirstHorizontalSectionCellList() -> [HomeCellItem] {
         var list = [HomeCellItem]()
         let firstHorizontalCards = HomeCellItem()
         firstHorizontalCards.cellType = .FirstHorizontal
@@ -193,7 +190,7 @@ extension DiscoverViewModel {
         return list
     }
 
-    func createVerticalCollectionCellList() -> [HomeCellItem]{
+    func createVerticalCollectionCellList() -> [HomeCellItem] {
         var list = [HomeCellItem]()
         let verticalCollectionCellCards = HomeCellItem()
         verticalCollectionCellCards.cellType = .VerticlalCollection
@@ -201,16 +198,14 @@ extension DiscoverViewModel {
         list.append(verticalCollectionCellCards)
         return list
     }
-    
-    func createTableViewCell(firstHorizontalList: [Product],_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
+
+    func createTableViewCell(firstHorizontalList: [Product], _ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         let sectionItem = sectionList[indexPath.section]
         if sectionItem.sectionType == .FirstHorizontal {
             return createFirstHorizontalCell(firstHorizontalCell: firstHorizontalProductList, tableView: tableView, indexPath: indexPath)
-        }
-        else if sectionItem.sectionType == .SecondHorizontal {
-            return createSecondHorizontalCell(secondHorizontalCell:secondHorizontalProductList,tableView: tableView, indexPath: indexPath)
-        }
-        else if sectionItem.sectionType == .VerticlalCollection {
+        } else if sectionItem.sectionType == .SecondHorizontal {
+            return createSecondHorizontalCell(secondHorizontalCell: secondHorizontalProductList, tableView: tableView, indexPath: indexPath)
+        } else if sectionItem.sectionType == .VerticlalCollection {
             return createVerticalCollectionCell(thirdVerticalCell: verticalProductList, tableView: tableView, indexPath: indexPath)
         }
         return UITableViewCell()
@@ -218,18 +213,15 @@ extension DiscoverViewModel {
 
     func getCellHeight(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
         let sectionItem = sectionList[indexPath.section]
-        if sectionItem.sectionType == .FirstHorizontal  {
+        if sectionItem.sectionType == .FirstHorizontal {
             if sectionItem.cellList[indexPath.row].cellType == .FirstHorizontal {
                 return 280
             }
-        }
-        else if sectionItem.sectionType == .SecondHorizontal {
+        } else if sectionItem.sectionType == .SecondHorizontal {
            return 200
-        }
-        
-        else if sectionItem.sectionType == .VerticlalCollection {
+        } else if sectionItem.sectionType == .VerticlalCollection {
             if sectionItem.cellList[indexPath.row].cellType == .VerticlalCollection {
-                return  200 * CGFloat(verticalProductList.count)
+                return  170 * CGFloat(verticalProductList.count)
             }
         }
         return 100

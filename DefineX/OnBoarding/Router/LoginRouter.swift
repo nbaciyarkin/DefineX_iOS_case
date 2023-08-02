@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 class LoginRouter {
-    
+
     static func startModule(navigationController: UINavigationController, viewController: UIViewController) {
-    
+
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TabBarController())
-      
+
     }
-    
+
 }

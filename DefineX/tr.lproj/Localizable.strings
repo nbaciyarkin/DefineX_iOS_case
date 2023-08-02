@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  DefineX
+
+  Created by Yarkın Gazibaba on 2.08.2023.
+  
+*/
+
+// MARK: - GENERAL
+"general_coming_soon_title" = "Çok Yakında";
+"successful_title" = "Başarılı";
+"error_title" = "Hata";
+"warning_title" = "Uyarı";
+
+// MARK: - DiscoveryScene
+"tabbar_first_item_title" = "Keşfet";
+
+// MARK: - LogIn
+"welcome_message" = "Definex Case Study";
+"login_button_title" = "Giriş";
+"forgot_pass_button_title" = "ŞİFREMİ UNUTTUM";
+"email_info_title" = "E-Posta adresi";
+"email-placeholder_title" = "E-Posta";
+"password_info_title" = "Şifre";
+"password-placeholder_title" = "Şifre";
+
+// MARK: - DiscoveryScene
+"header_label_title" = "Ana Sayfa";
+
+
+

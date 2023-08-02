@@ -7,7 +7,7 @@
 
 import Foundation
 class ApiCaller {
-    
+
 }
 extension ApiCaller {
     enum ServiceEndPoint: String {
@@ -17,27 +17,25 @@ extension ApiCaller {
         case discoverSecondHorizontalList = "/discoverSecondHorizontalList"
         case discoverThirthTwoColumnList = "/discoverThirthTwoColumnList"
         case Token = "XXX"
-        
+
         static func logIn() -> String {
             return  "\(Base_URL.rawValue)\(logIn.rawValue)"
         }
-        
+
         static func getFirstHorizontalList() -> String {
             let token = UserDefaults.standard.getToken()
             return "\(Base_URL.rawValue)\(discoverFirstHorizontalList.rawValue)"
         }
-        
+
         static func getSecondHorizontalList() -> String {
             let token = UserDefaults.standard.getToken()
             return  "\(Base_URL.rawValue)\(discoverSecondHorizontalList.rawValue)"
         }
-        
+
         static func getThirthTwoColumnList() -> String {
             let token = UserDefaults.standard.getToken()
             return  "\(Base_URL.rawValue)\(discoverThirthTwoColumnList.rawValue)"
         }
     }
-    
-    
-    
+
 }

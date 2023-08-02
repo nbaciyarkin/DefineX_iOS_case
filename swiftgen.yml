@@ -1,0 +1,14 @@
+strings:
+  inputs: DefineX/Base.lproj
+  outputs:
+    - templateName: structured-swift5
+      enumName: WhatEver
+      params:
+         enumName: LocalizationKeys
+      output: DefineX/SwiftGen/strings.swift
+xcassets:
+  inputs: DefineX/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: DefineX/SwiftGen/Assets.swift
+
