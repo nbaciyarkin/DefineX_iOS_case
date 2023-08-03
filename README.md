@@ -2,6 +2,10 @@
 
  Proje geliştirilirken programmaticallyUI yakalaşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
 
+ -Set Up Proje
+ İlk önce Terminal -> Pod dosyaları için pod install
+ -
+
 - Package Managers
   - SPM(Swift Package Manager)
   - 3rd Part Libraries:
