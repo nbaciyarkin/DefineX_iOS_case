@@ -4,8 +4,9 @@
 
  -Set Up Proje
  İlk önce Terminal -> Pod dosyaları için pod install
- -
-
+ SwiftGen için Terminal -> Pods/SwiftGen/bin/swiftgen
+ Finder'dan SwiftGen dosyasını bulunuz, içerisinde oluşan Asset file ve strings file'ı Xocde içerisinde SwiftGen Folder'a sürükleyerek bırakın.
+ -  
 - Package Managers
   - SPM(Swift Package Manager)
   - 3rd Part Libraries:
