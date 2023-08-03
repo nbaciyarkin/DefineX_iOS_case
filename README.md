@@ -8,13 +8,12 @@
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
 
-
-
  -<h3>Eğer SWiftGen klasorü hatalı veya boş görünüyorsa !!</h3> 
-  Eğer SWiftGen klasorü hatalı veya boş görünüyorsa !! -> Projeyi clone ettikten sonra SwiftGen klasörünü siliniz (içerisinde ki Assets ve strings file'ları da silinmiş olacak). Silmiş olduğunuz hiyerarşide tekrar boş bir SwiftGen klasörü oluşturunuz.("Pods/SwiftGen/bin/swiftgen" command'i ile tekrardan run etme adımı mevcut)
+ 
+  Eğer SwiftGen klasorü hatalı veya boş görünüyorsa !! -> Projeyi clone ettikten sonra SwiftGen klasörünü siliniz (içerisinde ki Assets ve strings file'ları da silinmiş olacak). Silmiş olduğunuz hiyerarşide tekrar boş bir SwiftGen klasörü oluşturunuz.("Pods/SwiftGen/bin/swiftgen" command'i ile tekrardan run etme adımı mevcut)
   Finder'dan Proje içerisinde SwiftGen dosyasını bulunuz, içerisinde oluşan Asset file ve strings file'ı Xcode içerisinde en başta içerisini silmiş olduğumuz SwiftGen Folder'a sürükleyerek bırakın.
-   SwiftGen için Terminal -> $ Pods/SwiftGen/bin/swiftgen 
- -
+  SwiftGen için Terminal -> $ Pods/SwiftGen/bin/swiftgen 
+  -
 <img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/054b7959-2bd8-4e0e-9c44-1f835fa02628.png" alt="Swagger" width="900" height="500"/>
 
 
