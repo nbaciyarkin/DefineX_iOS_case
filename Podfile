@@ -15,16 +15,4 @@ target 'DefineX' do
   pod 'Firebase/RemoteConfig', '~> 8.12.0'
   pod 'Firebase/Messaging', '~> 8.12.1'
 
-
-
-
-  target 'DefineXTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'DefineXUITests' do
-    # Pods for testing
-  end
-
 end
