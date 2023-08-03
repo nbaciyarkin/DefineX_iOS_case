@@ -1,5 +1,7 @@
 # DefineX_iOS_case
 
+Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaşandığından dolayı .xcworkspace uzantısını yolladım. Buradan projeyi çalıştırabilirsiniz.
+
  Proje geliştirilirken programmaticallyUI yakalaşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
 
  -Set Up Proje
