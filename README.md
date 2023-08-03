@@ -3,33 +3,42 @@
  Proje geliştirilirken programmaticallyUI yakalaşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
 
  -Set Up Proje
+
+ Projeyi clone ettikten sonra SwiftGen klasörünü siliniz (içerisinde ki Assets ve strings file'ları da silinmiş olacak). Silmiş olduğunuz hiyerarşide tekrar boş bir SwiftGen klasörü oluşturunuz.("Pods/SwiftGen/bin/swiftgen" command'i ile tekrardan run etme adımı mevcut)
+ -
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
  SwiftGen için Terminal -> $ Pods/SwiftGen/bin/swiftgen 
  -
- Finder'dan SwiftGen dosyasını bulunuz, içerisinde oluşan Asset file ve strings file'ı Xocde içerisinde SwiftGen Folder'a sürükleyerek bırakın.
- -  
-- Package Managers
-  - SPM(Swift Package Manager)
-  - 3rd Part Libraries:
-    - Alamofire
-    - SDWebImage
-    - SkyFloatingLabelTextField
-    - SnapKit
-- Homebrew
-  - 3rd Party Libraries:
-    - Swiftlint
+ Finder'dan Proje içerisinde SwiftGen dosyasını bulunuz, içerisinde oluşan Asset file ve strings file'ı Xcode içerisinde en başta içerisini silmiş olduğumuz SwiftGen Folder'a sürükleyerek bırakın.
 
-- CocoaPods
-  - 3rd Part Libraries:
-    - SwiftGen
-    - SwiftMessages
-    - Firebase
-    - Firebase/Core
-    - Firebase/Analytics
-    - Firebase/Crashlytics
-    - Firebase/RemoteConfig
-    - Firebase/Messaging
+
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/054b7959-2bd8-4e0e-9c44-1f835fa02628.png" alt="Swagger" width="900" height="500"/>
+
+
+ -<h2>Package Management</h2> 
+
+  - Package Managers
+   - SPM(Swift Package Manager)
+   - 3rd Part Libraries:
+     - Alamofire
+     - SDWebImage
+     - SkyFloatingLabelTextField
+     - SnapKit
+  - Homebrew
+   - 3rd Party Libraries:
+     - Swiftlint
+  
+  - CocoaPods
+   - 3rd Part Libraries:
+     - SwiftGen
+     - SwiftMessages
+     - Firebase
+     - Firebase/Core
+     - Firebase/Analytics
+     - Firebase/Crashlytics
+     - Firebase/RemoteConfig
+     - Firebase/Messaging
    
  # Private Youtube Video Link
 <h2>Video Link</h2>   
