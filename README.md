@@ -3,8 +3,10 @@
  Proje geliştirilirken programmaticallyUI yakalaşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
 
  -Set Up Proje
- İlk önce Terminal -> Pod dosyaları için pod install
- SwiftGen için Terminal -> Pods/SwiftGen/bin/swiftgen
+ İlk önce Terminal -> $ Pod dosyaları için pod install  
+ -
+ SwiftGen için Terminal -> $ Pods/SwiftGen/bin/swiftgen 
+ -
  Finder'dan SwiftGen dosyasını bulunuz, içerisinde oluşan Asset file ve strings file'ı Xocde içerisinde SwiftGen Folder'a sürükleyerek bırakın.
  -  
 - Package Managers
