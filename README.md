@@ -11,28 +11,34 @@
  SwiftGen için Terminal -> $ Pods/SwiftGen/bin/swiftgen 
  -
  Finder'dan Proje içerisinde SwiftGen dosyasını bulunuz, içerisinde oluşan Asset file ve strings file'ı Xcode içerisinde en başta içerisini silmiş olduğumuz SwiftGen Folder'a sürükleyerek bırakın.
- -  
-- Package Managers
-  - SPM(Swift Package Manager)
-  - 3rd Part Libraries:
-    - Alamofire
-    - SDWebImage
-    - SkyFloatingLabelTextField
-    - SnapKit
-- Homebrew
-  - 3rd Party Libraries:
-    - Swiftlint
 
-- CocoaPods
-  - 3rd Part Libraries:
-    - SwiftGen
-    - SwiftMessages
-    - Firebase
-    - Firebase/Core
-    - Firebase/Analytics
-    - Firebase/Crashlytics
-    - Firebase/RemoteConfig
-    - Firebase/Messaging
+
+<img src="https://github.com/nbaciyarkin/DefineX_iOS_case/assets/60100510/054b7959-2bd8-4e0e-9c44-1f835fa02628.png" alt="Swagger" width="900" height="500"/>
+
+
+ -<h2>Package Management</h2> 
+
+  - Package Managers
+   - SPM(Swift Package Manager)
+   - 3rd Part Libraries:
+     - Alamofire
+     - SDWebImage
+     - SkyFloatingLabelTextField
+     - SnapKit
+  - Homebrew
+   - 3rd Party Libraries:
+     - Swiftlint
+  
+  - CocoaPods
+   - 3rd Part Libraries:
+     - SwiftGen
+     - SwiftMessages
+     - Firebase
+     - Firebase/Core
+     - Firebase/Analytics
+     - Firebase/Crashlytics
+     - Firebase/RemoteConfig
+     - Firebase/Messaging
    
  # Private Youtube Video Link
 <h2>Video Link</h2>   
