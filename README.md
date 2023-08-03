@@ -8,6 +8,9 @@
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
 
+  Uygulamayı  Ayağa kaldırın ->  DefineX.xcworkspace 
+ -
+
  -<h1>Eğer SWiftGen klasorü hatalı veya boş görünüyorsa !!</h1> 
   -
   Eğer SwiftGen klasorü hatalı veya boş görünüyorsa !! -> Projeyi clone ettikten sonra SwiftGen klasörünü siliniz (içerisinde ki Assets ve strings file'ları da silinmiş olacak). Silmiş olduğunuz hiyerarşide tekrar boş bir SwiftGen klasörü oluşturunuz.("Pods/SwiftGen/bin/swiftgen" command'i ile tekrardan run etme adımı mevcut)
