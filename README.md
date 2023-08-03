@@ -4,7 +4,7 @@
 
  -Set Up Proje
 
- Projeyi clone ettikten sonra SwifGen klasörü içerisinde ki Assets ve strings file'ları siliniz(SwitGen run command'i ile tekrardan oluşturma adımı mevcut)
+ Projeyi clone ettikten sonra SwiftGen klasörü içerisinde ki Assets ve strings file'ları siliniz(SwitGen run command'i ile tekrardan oluşturma adımı mevcut)
  -
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
