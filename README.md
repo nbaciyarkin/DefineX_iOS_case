@@ -10,8 +10,6 @@ Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaş
  -
 
 -Run Schema seçili değil ise -> Target yeni schema seçiniz ve doğrudan çalıştırabilirsiniz.
--
-
 
  -<h1>Oluşabilecek hatalara karşı çözümler !!!!</h1> 
  
