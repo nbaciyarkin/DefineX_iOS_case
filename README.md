@@ -13,8 +13,7 @@ Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaş
 -
 
 
- -<h2>Oluşabilecek hatalara karşı çözümler !!!!</h2> 
- -
+ -<h1>Oluşabilecek hatalara karşı çözümler !!!!</h1> 
  
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
