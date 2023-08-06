@@ -9,10 +9,11 @@ Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaş
  Proje'yi tüm dosyaları ile beraber direk ayağa kaldırılabilir bir şekilde gönderdim oluşabilecek aksiliklere göre aşağıda adımlar oluşturdum.
  -
 
--Run Schema seçili değil ise -> Target yeni schema seçimn ve çalıştırabilirsiniz.
+-Run Schema seçili değil ise -> Target yeni schema seçiniz ve doğrudan çalıştırabilirsiniz.
 -
+
  
- -Set Up Proje
+ -Oluşabilecek hatalara karşı çözümler !!!!
  
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
