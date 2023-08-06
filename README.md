@@ -12,8 +12,9 @@ Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaş
 -Run Schema seçili değil ise -> Target yeni schema seçiniz ve doğrudan çalıştırabilirsiniz.
 -
 
- 
- -Oluşabilecek hatalara karşı çözümler !!!!
+
+ -<h2>Oluşabilecek hatalara karşı çözümler !!!!</h2> 
+ -
  
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
