@@ -4,9 +4,16 @@ Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaş
 
  Proje geliştirilirken programmaticallyUI yakalaşımıyla geliştirilmiştir ve StoryBoard kullanılmamıştır.ProgrammaticallyUI, StroyBoard kullanırken birden fazla kişinin çalıştığı projelerde Merge Conflict hatalarını olabildiğince azaltabilmek amacıyla düşünülerek uygulanmıştır.
 
+
+
+ Proje'yi tüm dosyaları ile beraber direk ayağa kaldırılabilir bir şekilde gönderdim oluşabilecek aksiliklere göre aşağıda adımlar oluşturdum.
+ -
+
+-Run Schema seçili değil ise -> Target yeni schema seçimn ve çalıştırabilirsiniz.
+-
+ 
  -Set Up Proje
-
-
+ 
  İlk önce Terminal -> $ Pod dosyaları için pod install  
  -
 
