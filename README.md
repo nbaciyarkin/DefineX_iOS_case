@@ -53,7 +53,6 @@ Proje .xcworkspace ile pushlanmıştır. Bir başka case gönderiminde hata yaş
      - Firebase/Messaging
    
  # Private Youtube Video Link
-<h2>Video Link</h2>   
    -Link : https://youtu.be/yC0EWJLi7PM
 
 # DefineX - SCENES
